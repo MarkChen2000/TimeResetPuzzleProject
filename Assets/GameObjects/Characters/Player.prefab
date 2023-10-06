@@ -101,11 +101,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_StatsController: {fileID: 357247350731383954}
-  CurrentEquipedAcAbility: 0
-  CurrentEquipedPaAbility: 0
+  CurrentEquipedAcAbility: 1
+  CurrentEquipedPaAbility: 1
+  CostOfTS: 20
+  InteractableFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   BTTimeScale: 0.5
-  BTChangeScale: 0.5
-  BTMPCost: 10
+  BTChangeScale: 0.01
+  BTMPCostPerFrame: 1
 --- !u!114 &357247350731383954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +133,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1169a12763d821746ad12100b23bbcb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player_MaxMP: 100
-  Player_CurrentMP: 0
+  _playerAbilityController: {fileID: 9184169518899410810}
+  playerStats:
+    MaxHP: 0
+    CurretHP: 0
+    MaxMP: 100
+    MPGenerateRate: 0.1
+    CurrentMP: 0
+  AutomaticallyRegainMPTime: 3
 --- !u!50 &5347902589156568583
 Rigidbody2D:
   serializedVersion: 4
@@ -323,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4071573110828630752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HandPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

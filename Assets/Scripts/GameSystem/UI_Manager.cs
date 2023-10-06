@@ -74,6 +74,7 @@ public class UI_Manager : MonoBehaviour
 
     void ShowTheScore( List<bool> scorestats)
     {
+        Debug.Log("show the score.");
         int i = 0;
         foreach ( var item in scorestats )
         {
